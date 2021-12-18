@@ -65,7 +65,10 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
+                                <select name="role" id="role">
+                                    <option value="helper">Helper</option>
+                                    <option value="senior">Senior</option>
+                                </select>
 
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">

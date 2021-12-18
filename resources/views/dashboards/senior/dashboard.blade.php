@@ -14,8 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in as !') }}
-                    {{-- {{ print(User::$fillable['role'])}} --}}
+                    {{ __('Hello SENIOR, You are logged in!') }}
                 </div>
             </div>
         </div>

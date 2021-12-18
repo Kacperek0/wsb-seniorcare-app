@@ -24,3 +24,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Dashboard seniora
+Route::get('/senior_dashboard', [App\Http\Controllers\Senior\DashboardController::class, 'index'])->middleware('role:senior');
+
+// Dashboard pomagającego
+Route::get('/helper_dashboard', [App\Http\Controllers\Helper\DashboardController::class, 'index'])->middleware('role:helper');
