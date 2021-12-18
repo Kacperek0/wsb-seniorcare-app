@@ -14,7 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in as !') }}
+                    {{ __('You are logged in as ').Auth::user()->role }}
+
+                    <p>
+                        See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>
+                    </p>
                     {{-- {{ print(User::$fillable['role'])}} --}}
                 </div>
             </div>
