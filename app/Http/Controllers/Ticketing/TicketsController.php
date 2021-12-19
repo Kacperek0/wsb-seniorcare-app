@@ -8,6 +8,7 @@ use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use App\Mailers\AppMailer;
 
 class TicketsController extends Controller
 {
@@ -45,7 +46,7 @@ class TicketsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, AppMailer $mailer)
     {
         $this->validate(
             $request, [
@@ -66,6 +67,8 @@ class TicketsController extends Controller
         ]);
 
         $ticket->save();
+
+        $mailer->sendTicketInformation(Auth::user(), $ticket);
 
         return redirect()->back()->with("status", "A ticket with ID: {{$ticket->ticket_id}} has been opened.");
     }
@@ -90,7 +93,7 @@ class TicketsController extends Controller
         return view('tickets.user_tickets', compact('tickets'));
     }
 
-    public function close($ticket_id)
+    public function close($ticket_id, AppMailer $mailer)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
@@ -99,6 +102,8 @@ class TicketsController extends Controller
         $ticket->save();
 
         $ticketOwner = $ticket->user;
+
+        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
 
         return redirect()->back()->with('status', 'The ticket has been closed.');
     }
