@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@extends('shopping.layout')
+{{-- @extends('shopping.layout') --}}
 
 @section('title', 'Cart')
 
