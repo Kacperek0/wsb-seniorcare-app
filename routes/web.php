@@ -47,3 +47,11 @@ Route::get('tickets/{ticket_id}', [TicketsController::class, 'show']);
 
 // Comment on ticket
 Route::post('comment', [CommentsController::class, 'postComment']);
+
+Route::group(['prefix' => 'helper', 'middleware' => 'helper'], function()
+    {
+        Route::get('tickets', [TicketsController::class, 'index']);
+
+        Route::post('close_ticket/{ticket_id}', [TicketsController::class, 'close']);
+    }
+);
