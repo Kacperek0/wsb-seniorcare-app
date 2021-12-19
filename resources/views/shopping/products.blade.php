@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- @extends('shopping.layout') --}}
-
 @section('title', 'Products')
 
 @section('content')

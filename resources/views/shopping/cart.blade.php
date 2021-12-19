@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{-- @extends('shopping.layout') --}}
-
 @section('title', 'Cart')
 
 @section('content')
@@ -35,7 +33,7 @@
                     </td>
                     <td data-th="Price">{{ $details['price'] }} PLN</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" />
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" min="1" max="999"/>
                     </td>
                     <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }} PLN</td>
                     <td class="actions" data-th="">
