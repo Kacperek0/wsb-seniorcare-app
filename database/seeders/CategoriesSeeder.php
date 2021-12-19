@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
 
 class CategoriesSeeder extends Seeder
 {
@@ -14,11 +16,13 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        $categories = array('Delivery', 'Shopping', 'Transport');
+        $categories = array('Transport', 'Housekeeping');
 
         foreach ($categories as $value)
         {
-            //
+            DB::table('categories')->insert([
+                'name' => $value,
+            ]);
         }
 
     }
