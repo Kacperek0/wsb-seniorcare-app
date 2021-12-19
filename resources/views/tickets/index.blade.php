@@ -46,7 +46,7 @@
                                     <td>
                                         @if($ticket->status === 'Open')
                                             <a href="{{ url('tickets/' . $ticket->ticket_id) }}" class="btn btn-primary">Comment</a>
-                                            <form action="{{ url('admin/close_ticket/' . $ticket->ticket_id) }}" method="POST">
+                                            <form action="{{ url('helper/close_ticket/' . $ticket->ticket_id) }}" method="POST">
                                                 {!! csrf_field() !!}
                                                 <button type="submit" class="btn btn-danger">Close</button>
                                             </form>
@@ -62,5 +62,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

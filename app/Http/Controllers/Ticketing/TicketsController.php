@@ -93,7 +93,7 @@ class TicketsController extends Controller
         return view('tickets.user_tickets', compact('tickets'));
     }
 
-    public function close($ticket_id)
+    public function close($ticket_id, AppMailer $mailer)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
@@ -102,6 +102,8 @@ class TicketsController extends Controller
         $ticket->save();
 
         $ticketOwner = $ticket->user;
+
+        $mailer->sendTicketStatusNotification($ticketOwner, $ticket);
 
         return redirect()->back()->with('status', 'The ticket has been closed.');
     }

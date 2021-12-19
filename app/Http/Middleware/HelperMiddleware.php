@@ -16,7 +16,7 @@ class HelperMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check() || (Auth::check() && Auth::user()->role !== "senior")) {
+        if (!Auth::check() || (Auth::check() && Auth::user()->role !== "helper")) {
             return redirect('home');
         }
         return $next($request);
