@@ -22,10 +22,13 @@
                         </p>
                     @else
                         <p>
-                            See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>
+                            See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>.
+                        </p>
+                        <p>
+                            Make shopping <a href="{{ url('shopping') }}">request</a>.
                         </p>
                     @endif
-                    
+
                 </div>
             </div>
         </div>
