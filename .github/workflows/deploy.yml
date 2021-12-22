@@ -1,0 +1,33 @@
+name: Deploy on Elastic Beanstalk
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Generate build number
+      id: buildnumber
+      uses: einaregilsson/build-number@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Generate deployment package
+      run: zip ../laravel-deployment-package.zip -r * .[^.]* -x "vendor/*"
+
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v20
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: ${{ secrets.EBS_APPLICATION_NAME }}
+        environment_name: ${{ secrets.EBS_ENV_NAME_PROD }}
+        version_label: ${{ steps.buildnumber.outputs }}
+        region: eu-west-1
+        deployment_package: laravel-deployment-package.zip
