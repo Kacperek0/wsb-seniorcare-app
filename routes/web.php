@@ -25,8 +25,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // Senior's dashboard
 Route::get('/senior_dashboard', [App\Http\Controllers\Senior\DashboardController::class, 'index'])->middleware('role:senior');
 
