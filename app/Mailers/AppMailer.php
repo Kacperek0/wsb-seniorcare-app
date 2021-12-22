@@ -11,8 +11,8 @@ class AppMailer
     use HasFactory;
 
     protected $mailer;
-    protected $fromAddress = 'support@supportticket.dev';
-    protected $fromName = 'Support Ticket';
+    protected $fromAddress = 'noreply@teamseniorcare.com';
+    protected $fromName = 'Team Seniorcare';
     protected $to;
     protected $subject;
     protected $view;

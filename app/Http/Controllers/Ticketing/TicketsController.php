@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Mailers\AppMailer;
+use Illuminate\Support\Facades\Mail;
 
 class TicketsController extends Controller
 {
@@ -70,7 +71,7 @@ class TicketsController extends Controller
 
         $mailer->sendTicketInformation(Auth::user(), $ticket);
 
-        return redirect()->back()->with("status", "A ticket with ID: {{$ticket->ticket_id}} has been opened.");
+        return redirect()->back()->with("status", "A ticket with ID: {$ticket->ticket_id} has been opened.");
     }
 
     /**
