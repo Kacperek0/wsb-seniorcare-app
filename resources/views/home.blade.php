@@ -16,10 +16,19 @@
 
                     {{ __('You are logged in as ').Auth::user()->role }}
 
-                    <p>
-                        See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>
-                    </p>
-                    {{-- {{ print(User::$fillable['role'])}} --}}
+                    @if(Auth::user()->role == 'helper')
+                        <p>
+                            See all <a href="{{ url('helper/tickets') }}">available requests</a>.
+                        </p>
+                    @else
+                        <p>
+                            See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>.
+                        </p>
+                        <p>
+                            Make shopping <a href="{{ url('shopping') }}">request</a>.
+                        </p>
+                    @endif
+
                 </div>
             </div>
         </div>

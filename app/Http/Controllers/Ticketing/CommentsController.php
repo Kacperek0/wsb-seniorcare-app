@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
+use App\Mailers\AppMailer;
 
 class CommentsController extends Controller
 {
-    public function postComment(Request $request)
+    public function postComment(Request $request, AppMailer $mailer)
     {
         $this->validate($request, [
             'comment' => 'required'
@@ -20,6 +21,11 @@ class CommentsController extends Controller
             'user_id' => Auth::user()->id,
             'comment' => $request->input('comment')
         ]);
+
+        if ($comment->ticket->user->id !== Auth::user()->id)
+        {
+            $mailer->sendTicketComments($comment->ticket->user, Auth::user(), $comment->ticket, $comment);
+        }
 
         return redirect()->back()->with('status', 'Your comment has been added');
     }

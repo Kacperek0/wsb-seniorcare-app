@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Shopping\ProductsController;
 use App\Http\Controllers\Ticketing\CommentsController;
 use App\Http\Controllers\Ticketing\TicketsController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,11 +29,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -55,3 +53,29 @@ Route::get('tickets/{ticket_id}', [TicketsController::class, 'show']);
 
 // Comment on ticket
 Route::post('comment', [CommentsController::class, 'postComment']);
+
+// Helper menu
+Route::group(['prefix' => 'helper', 'middleware' => 'helper'], function()
+    {
+        Route::get('tickets', [TicketsController::class, 'index']);
+
+        Route::post('close_ticket/{ticket_id}', [TicketsController::class, 'close']);
+    }
+);
+
+// Shopping section
+
+Route::group(['prefix' => 'shopping'], function()
+    {
+        Route::get('/', [ProductsController::class, 'index']);
+
+        Route::get('cart', [ProductsController::class, 'cart']);
+
+        Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart']);
+
+        Route::patch('update-cart', [ProductsController::class, 'update']);
+
+        Route::delete('remove-from-cart', [ProductsController::class, 'remove']);
+    }
+);
+
