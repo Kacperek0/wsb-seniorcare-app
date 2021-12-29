@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -16,12 +17,15 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        $categories = array('Transport', 'Housekeeping');
+        $categories = ['Transport', 'Housekeeping', 'Delivery', 'Shopping'];
 
         foreach ($categories as $value)
         {
-            DB::table('categories')->insert([
-                'name' => $value,
+            Category::updateOrCreate([
+                'name' => $value
+            ],
+            [
+                'name' => $value
             ]);
         }
 
