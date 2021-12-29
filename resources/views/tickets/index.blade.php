@@ -11,6 +11,12 @@
                     <i class="fa fa-ticket"> Tickets</i>
                 </div>
                 <div class="panel-body">
+                    @if (session('message'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
                     @if ($tickets->isEmpty())
                         <p>There are currently no tickets.</p>
                     @else

@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Shopping\CheckoutController;
 use App\Http\Controllers\Shopping\ProductsController;
 use App\Http\Controllers\Ticketing\CommentsController;
 use App\Http\Controllers\Ticketing\TicketsController;
+use App\Http\Middleware\Role;
+use App\Models\Checkout;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +41,7 @@ Route::get('new-ticket', [TicketsController::class, 'create']);
 Route::post('new-ticket', [TicketsController::class, 'store']);
 
 // List tickets
-Route::get('my_tickets', [TicketsController::class, 'userTickets']);
+Route::get('my_tickets', [TicketsController::class, 'userTickets'])->name('my-tickets');
 
 // Show selected ticket
 Route::get('tickets/{ticket_id}', [TicketsController::class, 'show']);
@@ -68,6 +71,8 @@ Route::group(['prefix' => 'shopping'], function()
         Route::patch('update-cart', [ProductsController::class, 'update']);
 
         Route::delete('remove-from-cart', [ProductsController::class, 'remove']);
+
+        Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout');
     }
 );
 
