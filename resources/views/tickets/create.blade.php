@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Open New Ticket</div>
+                <div class="panel-heading">Open new help request</div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -33,7 +33,9 @@
                                 <select id="category" type="category" class="form-control" name="category">
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @if ($category->name !== 'Shopping')
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endif
                                     @endforeach
                                 </select>
                                 @if ($errors->has('category'))
@@ -82,5 +84,5 @@
             </div>
         </div>
     </div>
-    
+
 @endsection

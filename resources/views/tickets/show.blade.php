@@ -17,7 +17,7 @@
                         </div>
                     @endif
                     <div class="ticket-info">
-                        <p>{{ $ticket->message }}</p>
+                        <p>{!! nl2br($ticket->message) !!}</p>
                         <p>Category: {{ $ticket->category->name }}</p>
                         <p>
                             @if ($ticket->status === 'Open')
@@ -36,5 +36,5 @@
             @include('tickets.reply')
         </div>
     </div>
-    
+
 @endsection

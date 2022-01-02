@@ -8,11 +8,17 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket"> Tickets</i>
+                    <i class="fa fa-ticket"> Help Requests</i>
                 </div>
                 <div class="panel-body">
+                    @if (session('message'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
                     @if ($tickets->isEmpty())
-                        <p>There are currently no tickets.</p>
+                        <p>There are currently no help requests.</p>
                     @else
                         <table class="table">
                             <thead>

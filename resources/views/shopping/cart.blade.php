@@ -33,7 +33,7 @@
                     </td>
                     <td data-th="Price">{{ $details['price'] }} PLN</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" min="1" max="999"/>
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" min="1" max="999" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </td>
                     <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }} PLN</td>
                     <td class="actions" data-th="">
@@ -50,8 +50,16 @@
             <td class="text-center"><strong>Total {{ $total }}</strong></td>
         </tr>
         <tr>
-            <td><a href="{{ url('/shopping') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-            <td><a href="{{ url('shopping/checkout') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Checkout</a></td>
+            <td>
+                <a href="{{ url('/shopping') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td>
+                <form action="{{ route('checkout') }}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <button type="submit" class="btn btn-warning">
+                    Checkout
+                </button>
+                </form>
+            </td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Total {{ $total }} PLN</strong></td>
         </tr>

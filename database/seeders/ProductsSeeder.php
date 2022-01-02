@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,22 +15,28 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
-            'name' => 'Butter',
-            'description' => 'Regular butter',
-            'price' => '7.99'
-        ]);
+        $products = [
+            ['Butter', 'Regular butter', '6.50'],
+            ['Bread', 'Just a bread', '2.99'],
+            ['Lech Pils', 'Beer from local brewery', '2.59'],
+            ['Pepsi 2l', 'Cuz its better than Cola', '8.29'],
+            ['Roll', 'A regular roll', '0.39']
+        ];
 
-        DB::table('products')->insert([
-            'name' => 'Bread',
-            'description' => 'Just bread',
-            'price' => '2.99'
-        ]);
+        foreach ($products as $item) {
+            Product::updateOrCreate(
+                [
+                    'name' => $item[0],
+                    'description' => $item[1],
+                    'price' => $item[2]
+                ],
+                [
+                    'name' => $item[0],
+                    'description' => $item[1],
+                    'price' => $item[2]
+                ]
+            );
+        }
 
-        DB::table('products')->insert([
-            'name' => 'Lech Pils',
-            'description' => 'Lech Pils, local beer',
-            'price' => '2.59'
-        ]);
     }
 }
