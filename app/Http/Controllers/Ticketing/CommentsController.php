@@ -10,6 +10,11 @@ use App\Mailers\AppMailer;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+    
     public function postComment(Request $request, AppMailer $mailer)
     {
         $this->validate($request, [

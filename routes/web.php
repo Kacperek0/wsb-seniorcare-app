@@ -35,7 +35,7 @@ Route::get('/senior_dashboard', [App\Http\Controllers\Senior\DashboardController
 Route::get('/helper_dashboard', [App\Http\Controllers\Helper\DashboardController::class, 'index'])->middleware('role:helper');
 
 // Create new ticket
-Route::get('new-ticket', [TicketsController::class, 'create']);
+Route::get('new-ticket', [TicketsController::class, 'create'])->name('new-request');
 
 // Store new ticket
 Route::post('new-ticket', [TicketsController::class, 'store']);
@@ -52,7 +52,7 @@ Route::post('comment', [CommentsController::class, 'postComment']);
 // Helper menu
 Route::group(['prefix' => 'helper', 'middleware' => 'helper'], function()
     {
-        Route::get('tickets', [TicketsController::class, 'index']);
+        Route::get('tickets', [TicketsController::class, 'index'])->name('help-requests');
 
         Route::post('close_ticket/{ticket_id}', [TicketsController::class, 'close']);
     }
@@ -62,9 +62,9 @@ Route::group(['prefix' => 'helper', 'middleware' => 'helper'], function()
 
 Route::group(['prefix' => 'shopping'], function()
     {
-        Route::get('/', [ProductsController::class, 'index']);
+        Route::get('/', [ProductsController::class, 'index'])->name('shopping');
 
-        Route::get('cart', [ProductsController::class, 'cart']);
+        Route::get('cart', [ProductsController::class, 'cart'])->name('cart');
 
         Route::get('add-to-cart/{id}', [ProductsController::class, 'addToCart']);
 

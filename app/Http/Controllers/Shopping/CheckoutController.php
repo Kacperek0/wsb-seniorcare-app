@@ -12,6 +12,11 @@ use App\Models\Category;
 
 class CheckoutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function store(Request $request, AppMailer $mailer)
     {
         $cart = $request->session()->get('cart', []);
@@ -46,7 +51,7 @@ class CheckoutController extends Controller
         $mailer->sendTicketInformation(Auth::user(), $ticket);
 
         $request->session()->forget('cart');
-        
+
         $request->session()->flash('message', 'Your shopping request has been created.');
 
         return redirect()->route('my-tickets');
