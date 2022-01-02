@@ -33,7 +33,7 @@
                     </td>
                     <td data-th="Price">{{ $details['price'] }} PLN</td>
                     <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" min="1" max="999"/>
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity" min="1" max="999" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                     </td>
                     <td data-th="Subtotal" class="text-center">{{ $details['price'] * $details['quantity'] }} PLN</td>
                     <td class="actions" data-th="">
