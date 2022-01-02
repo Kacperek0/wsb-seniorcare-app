@@ -20,15 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-    try {
-        DB::connection()->getPdo();
-        echo "Connected successfully to: " . DB::connection()->getDatabaseName();
-    } catch (\Exception $e) {
-        die("Could not connect to the database. Please check your configuration. error:" . $e );
-    }
-    
+Route::get('/', function () { 
     return view('welcome');
 });
 
