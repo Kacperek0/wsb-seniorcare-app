@@ -1,3 +1,4 @@
+<div class="container products mt-5 pt-5 pb-5 mb-5">
 <div class="comments">
     @foreach($ticket->comments as $comment)
         <div class="panel panel-@if($ticket->user->id === $comment->user_id){{"default"}}@else{{"success"}}@endif">
@@ -10,4 +11,5 @@
             </div>
         </div>
     @endforeach
+</div>
 </div>
