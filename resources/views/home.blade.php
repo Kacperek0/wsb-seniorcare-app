@@ -4,10 +4,10 @@
 <div class="container mt-5 pt-5 pb-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <div class="card border-0">
+                
 
-                <div class="card-body">
+                <div class="card-body mx-auto" style="font-size: 25px">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -18,14 +18,19 @@
 
                     @if(Auth::user()->role == 'helper')
                         <p>
-                            See all <a href="{{ url('helper/tickets') }}">available requests</a>.
+                            
+                        <a href="{{ url('helper/tickets') }}" class="button card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>Available requests</span></a>
                         </p>
                     @else
                         <p>
-                            See all your tickets <a href="{{ url('my_tickets') }}">tickets</a>.
+                            
+                            <a href="{{ url('my_tickets') }}" class="button card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>My requests</span></a>
+
                         </p>
                         <p>
-                            Make shopping <a href="{{ url('shopping') }}">request</a>.
+                            
+                            <a href="{{ url('shopping') }}" class="button card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>Shopping request</span></a>
+
                         </p>
                     @endif
 
