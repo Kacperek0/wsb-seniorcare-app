@@ -3,8 +3,8 @@
 @section('title', 'Cart')
 
 @section('content')
-
-    <table id="cart" class="table table-hover table-condensed">
+<div class="container products mt-5 pt-5 pb-5 mb-5">
+    <table id="cart" class="table table-hover table-condensed mt-5">
         <thead>
         <tr>
             <th style="width:50%">Product</th>
@@ -106,3 +106,4 @@
     </script>
 
 @endsection
+</div>

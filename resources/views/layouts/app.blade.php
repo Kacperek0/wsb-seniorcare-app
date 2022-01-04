@@ -48,42 +48,19 @@
       </head>
       
 <body>
-    <div>
+    <div id="app">
         <nav class="navbar fixed-top navbar-expand-lg bg-info text-uppercase mb-5" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     <strong>{{ config('app.name') }}</strong>
                 </a>
-                <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto navbar-light">
-                        @guest
-
-
-                        @else
-                            @if (Auth::user()->role === 'helper')
-                                <div class="topnav">
-                                    <a class="nav-item" role="button" href="{{ route('help-requests') }}">Help requests</a>
-                                </div>
-
-
-                            @endif
-
-                            @if (Auth::user()->role === 'senior')
-                                <div class="topnav" align="left">
-                                    <a class="nav-item" role="button" href="{{ route('new-request') }}">Request for help</a>
-                                    <a class="nav-item" role="button" href="{{ route('shopping') }}">Shopping request</a>
-                                    <a class="nav-item" role="button" href="{{ route('my-tickets') }}">My requests</a>
-
-
-                            @endif
-                        @endguest
-
-                    </ul>
+                    
                     {{-- Middle of Navbar --}}
                     <ul class="navbar-nav ml-auto navbar-light">
                         @guest
@@ -91,13 +68,13 @@
                         @else
                             @if (Auth::user()->role === 'senior')
                             <div class="dropdown">
-                            <button type="button" class="btn btn-info" data-toggle="dropdown">
+                            <button type="button" class="btn btn-info" data-toggle="dropdown" data-target="#droppp">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                                 @if ( is_countable(session('cart')) && count(session('cart')) > 0)
                                     <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                                 @endif
                             </button>
-                            <div class="dropdown-menu">
+                            <div class="dropdown-menu" id="droppp">
                                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                                     <?php $total = 0 ?>
                                     @foreach((array) session('cart') as $id => $details)
@@ -150,15 +127,34 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                                <button class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                <a>
+                                    {{ Auth::user()->name }} <i class="bi bi-menu-up"></i>
+                                </a></button>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="collapse dropdown-menu" aria-labelledby="navbarDropdown" id="navbarResponsive">
+
+                                    <ul class="navbar-nav navbar-light">
+                                        @guest
+                                        @else
+                                        @if (Auth::user()->role === 'helper')
+                                        <div class="topnav">
+                                            <a class="nav-item text-black pt-1 pb-4 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
+                                        </div>
+                                        @endif
+                                        @if (Auth::user()->role === 'senior')
+                                        <div class="topnav">
+                                            <a class="nav-item text-black pt-1 ml-3" role="button" href="{{ route('new-request') }}">Request for help</a>
+                                            <a class="nav-item text-black pt-3 ml-3" role="button" href="{{ route('shopping') }}">Shopping request</a>
+                                            <a class="nav-item text-black pt-3 pb-4 ml-3" role="button" href="{{ route('my-tickets') }}">My requests</a>
+                                        @endif
+                                        @endguest
+
+                                    </ul>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <strong>{{ __('Logout') }}</strong>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
