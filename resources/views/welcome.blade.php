@@ -40,6 +40,7 @@
 
     <body>
 
+
     <nav class="navbar fixed-top navbar-expand-lg bg-info text-uppercase" id="mainNav">
             <div class="container">
                 <a class="navbar-brand text-white" href="#seniorcare"><strong>SeniorCare</strong></a>
