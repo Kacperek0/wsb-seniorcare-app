@@ -42,11 +42,11 @@
         <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
+        
         <link href="sticky-footer-navbar.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
       </head>
-
+      
 <body>
     <div id="app">
         <nav class="navbar fixed-top navbar-expand-lg bg-info text-uppercase mb-5" id="mainNav">
@@ -208,7 +208,6 @@
                 </div>
             </div>
         </footer>
-
     <div class="copyright py-4 text-center text-dark">
             <div class="container"><small>Copyright &copy; SeniorCare 2021</small></div>
         </div>
