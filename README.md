@@ -1,4 +1,4 @@
-### [Visit Seniorcare Webside!](http://app.teamseniorcare.com/)
+# [Visit Seniorcare Webside!](http://app.teamseniorcare.com/)
 
 ## Why Seniorcare
 
@@ -10,27 +10,36 @@ Seniorcare is a simple application to provide help to your elderly neighbours. A
 
 ## Use case diagram
 
-![use case diagram](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/UML+use+case.png)
+![use case diagram](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/UML+use+case+(1).png)
 
-<div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/0ab358c0-8a7a-4821-9636-0fd681fd751a" id="kpxHN.Bs9bPF"></iframe></div>
+# Technical Description
 
-## Technical Description
-
-# Infra
+## Infra
 
 Seniorcare is a cloud based app using Amazon Web Services and it's features. Application is being deployed automatically using Github Actions. Overview is presented on the chart below.
 
-![infra](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/Blank+diagram+(2).png)
+![infra](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/Seniorcare+app+infra.png)
 
-<div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/d161b3a7-038f-458e-8053-ef84d19bedd6" id="WOxHtKHmw7SY"></iframe></div>
+## Backend
 
-# Backend
+Backend is build with [Laravel Framework](https://laravel.com/) following the MVC (Model-View-Controller) principals.
 
-# Frontend
+Example:
+*Ticket
+[M](https://github.com/Kacperek0/wsb-seniorcare-app/blob/master/app/Models/Ticket.php) -> [V](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/resources/views/tickets/index.blade.php) -> [C](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/app/Http/Controllers/Ticketing/TicketsController.php)
+
+## Frontend
 
 ## Database tables
+All Database tables are created and managed from code.
+
+![db_tables](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/Screen+Shot+2022-01-05+at+23.09.32.png)
 
 ## Contributors
+
+- [Mikołaj Kostrzewa](https://github.com/kostek-os) - Frontend + Backend
+- [Paweł Skorzybót](https://github.com/PawelSkorzybot) - Frontend
+- [Kacper Szczepanek](https://github.com/Kacperek0) - Backend + Infra
 
 ## License
 
