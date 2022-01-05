@@ -25,7 +25,8 @@ Seniorcare is a cloud based app using Amazon Web Services and it's features. App
 Backend is build with [Laravel Framework](https://laravel.com/) following the MVC (Model-View-Controller) principals.
 
 Example:
-*Ticket
+*Ticket*
+
 [M](https://github.com/Kacperek0/wsb-seniorcare-app/blob/master/app/Models/Ticket.php) -> [V](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/resources/views/tickets/index.blade.php) -> [C](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/app/Http/Controllers/Ticketing/TicketsController.php)
 
 ## Frontend
