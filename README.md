@@ -10,7 +10,7 @@ Seniorcare is a simple application to provide help to your elderly neighbours. A
 
 ## Use case diagram
 
-![use case diagram](https://lucid.app/documents/embeddedchart/0ab358c0-8a7a-4821-9636-0fd681fd751a)
+![use case diagram](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/UML+use+case.png)
 
 <div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/0ab358c0-8a7a-4821-9636-0fd681fd751a" id="kpxHN.Bs9bPF"></iframe></div>
 
@@ -20,7 +20,7 @@ Seniorcare is a simple application to provide help to your elderly neighbours. A
 
 Seniorcare is a cloud based app using Amazon Web Services and it's features. Application is being deployed automatically using Github Actions. Overview is presented on the chart below.
 
-![infra](https://lucid.app/documents/embeddedchart/d161b3a7-038f-458e-8053-ef84d19bedd6)
+![infra](https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/Blank+diagram+(2).png)
 
 <div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/d161b3a7-038f-458e-8053-ef84d19bedd6" id="WOxHtKHmw7SY"></iframe></div>
 
