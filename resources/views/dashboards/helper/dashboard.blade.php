@@ -15,7 +15,7 @@
                     {{ __('Hello HELPER, You are logged in!') }}
                 </div>
                 <div >
-                        <a href="{{ route('help-requests') }}" class="button card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>Help requests</span></a>
+                        <a href="{{ route('help-requests') }}" class="button btn btn-primary card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>Help requests</span></a>
                     </div>
             </div>
         </div>

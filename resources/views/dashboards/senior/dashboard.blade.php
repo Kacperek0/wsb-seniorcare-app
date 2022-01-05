@@ -18,7 +18,7 @@
                     {{ __('Hello SENIOR, You are logged in!') }}
                 </div>
                     <div >
-                        <a href="{{ route('my-tickets') }}" class="button card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>My requests</span></a>
+                        <a href="{{ route('my-tickets') }}" class="button btn btn-primary card-header mx-auto d-flex justify-content-center" style="width: 300px; text-align: center;" ><span>My requests</span></a>
                     </div>
             </div>
         </div>
