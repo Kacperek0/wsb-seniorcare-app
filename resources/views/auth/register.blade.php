@@ -74,7 +74,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mx-auto">
+                        <div class="form-group row mx-auto float-center">
                             <div class="col-md-6  mx-auto">
                                 <button type="submit" class=" button_log btn btn-primary">
                                   <span>  {{ __('Register') }}</span>

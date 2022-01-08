@@ -49,7 +49,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mx-auto" >
+                        <div class="form-group row mx-auto float-right" >
                             <div class=" col-md-10 mx-auto" >
                                 <button type="submit" class=" button_log btn btn-primary" >
                                    <span> {{ __('Login') }}</span>

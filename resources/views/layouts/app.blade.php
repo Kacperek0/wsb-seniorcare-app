@@ -42,11 +42,11 @@
         <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-        
+
         <link href="sticky-footer-navbar.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
       </head>
-      
+
 <body>
     <div id="app">
         <nav class="navbar fixed-top navbar-expand-lg bg-info text-uppercase mb-5" id="mainNav">
@@ -68,7 +68,7 @@
                         @else
                             @if (Auth::user()->role === 'senior')
                             <div class="dropdown">
-                            <button type="button" class="btn btn-info" data-toggle="dropdown" data-target="#droppp">
+                            <button type="button" class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" data-toggle="dropdown" data-target="#droppp">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                                 @if ( is_countable(session('cart')) && count(session('cart')) > 0)
                                     <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
@@ -111,7 +111,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto navbar-light">
+                    <ul class="navbar-nav ml-auto navbar-light float-right">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -139,14 +139,14 @@
                                         @else
                                         @if (Auth::user()->role === 'helper')
                                         <div class="topnav">
-                                            <a class="nav-item text-black pt-1 pb-4 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
+                                            <a class="nav-item text-black pt-1 pb-4 pl-2 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
                                         </div>
                                         @endif
                                         @if (Auth::user()->role === 'senior')
                                         <div class="topnav">
-                                            <a class="nav-item text-black pt-1 ml-3" role="button" href="{{ route('new-request') }}">Request for help</a>
-                                            <a class="nav-item text-black pt-3 ml-3" role="button" href="{{ route('shopping') }}">Shopping request</a>
-                                            <a class="nav-item text-black pt-3 pb-4 ml-3" role="button" href="{{ route('my-tickets') }}">My requests</a>
+                                            <a class="nav-item text-black pl-2 pt-1 ml-3" role="button" href="{{ route('new-request') }}">Request for help</a></br>
+                                            <a class="nav-item text-black pt-3 pl-2 ml-3" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
+                                            <a class="nav-item text-black pt-3 pl-2 pb-4 ml-3" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
                                         @endif
                                         @endguest
 
@@ -176,12 +176,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('javascript')
-    <footer class="footer text-center bg-secondary pt-5 pb-5 mt-5 " id="contact">
+    <footer class="footer text-center bg-secondary pt-3 pb-3 mt-5 " id="contact">
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h3 class="text-uppercase mb-4"><i class="bi bi-geo" style="font-size: 2rem; color: darkgray;"></i>  Location</h3>
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <h4 class="text-uppercase mb-3"><i class="bi bi-geo" style="font-size: 2rem; color: darkgray;"></i>  Location</h4>
                         <p class="lead mb-0">
                             ul. Powstańców Wielkopolskich 5
                             <br />
@@ -189,8 +189,8 @@
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h3 class="text-uppercase mb-4"><i class="bi bi-globe2" style="font-size: 2rem; color: darkgray;"></i>  Around the Web</h3>
+                    <div class="col-lg-4 mb-3 mb-lg-0">
+                        <h4 class="text-uppercase mb-3"><i class="bi bi-globe2" style="font-size: 2rem; color: darkgray;"></i>  Around the Web</h4>
                         <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
                         <a href="https://mobile.twitter.com/i/flow/login" class="fa fa-twitter"></a>
                         <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
@@ -199,7 +199,7 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h3 class="text-uppercase mb-4"><i class="bi bi-headset" style="font-size: 2rem; color: darkgray;"></i>  Contact</h3>
+                        <h4 class="text-uppercase mb-3"><i class="bi bi-headset" style="font-size: 2rem; color: darkgray;"></i>  Contact</h4>
                         <p class="mb-0">
                             Email: support@teamseniorcare.com<br>
                             <h5>We are happy to help!</h5>
