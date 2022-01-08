@@ -6,13 +6,13 @@
 </head>
 <body>
 <p>
-Thank you {{ ucfirst($user->name) }} for contacting our helpers team. A help request has been opened for you. You will be notified when a response is made by email. The details of your ticket are shown below:
+Thank you {{ ucfirst($user->name) }} for contacting our helpers team. A help request has been opened for you. You will be notified when a response is made by email. The details of your help request are shown below:
 </p>
 <p>Title: {{ $ticket->title }}</p>
 <p>Priority: {{ $ticket->priority }}</p>
 <p>Status: {{ $ticket->status }}</p>
 <p>
-You can view the ticket at any time at {{ url('tickets/'. $ticket->ticket_id) }}
+You can view the help request at any time at {{ url('tickets/'. $ticket->ticket_id) }}
 </p>
 <p>
 Yours faithfuly,
