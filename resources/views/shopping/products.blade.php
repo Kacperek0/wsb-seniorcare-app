@@ -15,7 +15,7 @@
                             <h4>{{ $product->name }}</h4>
                             <p>{{ $product->description }}</p>
                             <p><strong>Price: </strong> {{ $product->price }} PLN</p>
-                            <p class="btn-holder"><a href="{{ url('shopping/add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
+                            <p class=" btn-holder"><a href="{{ url('shopping/add-to-cart/'.$product->id) }}" class="button_cart  btn btn-warning btn-block text-center" role="button"><span>Add to cart</span></a> </p>
                         </div>
                     </div>
                 </div>

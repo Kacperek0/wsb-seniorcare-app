@@ -51,12 +51,12 @@
         </tr>
         <tr>
             <td>
-                <a href="{{ url('/shopping') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                <a href="{{ url('/shopping') }}" class="button2 btn btn-warning"><span> Continue Shopping</a></span></td>
             <td>
                 <form action="{{ route('checkout') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <button type="submit" class="btn btn-warning">
-                    Checkout
+                <button type="submit" class="button btn btn-warning" style="font-size: 15px; width: 150px; height:50px; padding:5px;">
+                  <span>  Checkout </span>
                 </button>
                 </form>
             </td>

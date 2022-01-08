@@ -15,7 +15,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="button_cart btn btn-primary" style=" font-size: 28px; padding: 20px; width: 200px;"><span>Submit</span></button>
                     </div>
                 </form>
             </div>
