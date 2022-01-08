@@ -30,8 +30,8 @@
                                             {{ $ticket->category->name }}
                                         </td>
                                         <td>
-                                            <a href="{{ url('tickets/' . $ticket->ticket_id) }}">
-                                                #{{ $ticket->ticket_id }} - {{ $ticket->title }}
+                                            <a class="button_a btn" href="{{ url('tickets/' . $ticket->ticket_id) }}">
+                                               <span> #{{ $ticket->ticket_id }} - {{ $ticket->title }}</span>
                                             </a>
                                         </td>
                                         <td>

@@ -33,7 +33,7 @@ Examples:
 
 [M](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/app/Models/User.php) -> [V](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/resources/views/auth/login.blade.php) -> [C](https://github.com/Kacperek0/wsb-seniorcare-app/blob/feature/readme/app/Http/Controllers/Auth/LoginController.php)
 ## Frontend
-
+Frontend is build with CSS, HTML5 and Bootstrap v4.0.0 
 ## Database tables
 All Database tables are created and managed from code.
 
