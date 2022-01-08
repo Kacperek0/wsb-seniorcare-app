@@ -43,7 +43,7 @@
 
     <nav class="navbar fixed-top navbar-expand-lg bg-info text-uppercase" id="mainNav">
             <div class="container">
-                <a class="navbar-brand text-white" href="#seniorcare"><strong>SeniorCare</strong></a>
+                <a class="navbar-brand text-white" href="#seniorcare"><strong>Seniorcare</strong></a>
                 <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="bi bi-menu-up"></i>
@@ -75,7 +75,7 @@
         <section id="seniorcare" class="page-section bg-light text-muted mb-0 pt-5" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h1 class="page-section-heading text-center text-dark pt-5 pb-2">SeniorCare</h1>
+                <h1 class="page-section-heading text-center text-dark pt-5 pb-2">Seniorcare</h1>
 
                 <img src="https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/volunteer.png" class="rounded">
                 <!-- About Section Content-->
@@ -90,17 +90,22 @@
         <section id="about" class="page-section bg-light text-muted mb-0 pt-5" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h1 class="page-section-heading text-center text-dark pt-5 pb-2">About SeniorCare</h1>
+                <h1 class="page-section-heading text-center text-dark pt-5 pb-2">About Seniorcare</h1>
                 <!-- About Section Content-->
                 <div class="row mt-4 pb-5">
-                    <div class="col-lg-12 ms-auto text-center mt-4 pb-5"><p><em><h2>
-                        SeniorCare to platforma zrzeszająca osoby poszukujące pomocy oraz osoby gotowe takiej pomocy udzielić.
-                        Strona ma na celu umożliwienie pomocy drugiemu człowiekowi, bliżniemu w celu ułatwiena sobie życia.
-                        Jesteś osobą która ma trudności z chodzeniem, a może po prostu się obecenie rozchorowałeś?
-                        Jako senior masz możliwość stworzenia prośby o pomoc, w tym celu zaloguj się do swojego konta, jeśli takiego jeszcze nie posiadasz, niezbęde będzie utworzenie własnego konta.
-                        Po zalogowaniu przejdź do zakładki nowe zgłoszenie i dodaj swoją prośbe, dokładnie opisz czego oczekujesz.
-                        Jesteś osobą szukającą możliwości aby pomóc bliźniemu? Nic trudnego, przejdź do swojego profilu, poprzez zalogowanie się na stronie, jeśli nie masz konta
-                        utwórz nowe i zajrzyj do zakładki aktualne zgłoszenia. Dziękujemy, że chcecie pomagać. Liczymy, że razem będzie nam łatwiej.
+                    <div class="col-lg-12 ms-auto text-justify mt-4 pb-5"><p><em><h2>
+                        Seniorcare is a platform which is deliverying help among local society.
+                        Using our platform you can help your elder neighbors with their daily housework like shopping or others.
+                        <br><br>
+                        On the other hand if you are a senior that's the perfect place where you can request for help.
+                        <br><br>
+                        As senior after registration you can create a help request which will be assigned to one of our helpers.
+                        <br><br>
+                        After logging in all you have to do is just opening a new help request tab and let us know what kind of help you need.
+                        <br><br>
+                        Everything is free of charge and is basing on charity in local society.
+                        <br><br>
+                        If you would like to help your elderly neighbors please feel free to register. Immidiately you will receive access to multiple help requests from your local society. You can leave a comment under a request you'd like to help with and start helping. It is that easy!
                     </h2></em></p></div>
                     <img src="https://wsb-seniorcare-app.s3.eu-west-1.amazonaws.com/close.png" class="rounded">
                 </div>
