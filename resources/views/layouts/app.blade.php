@@ -139,14 +139,14 @@
                                         @else
                                         @if (Auth::user()->role === 'helper')
                                         <div class="topnav">
-                                            <a class="nav-item text-black pt-1 pb-4 pl-2 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
+                                            <a class="nav-item text-black pt-1 pb-4 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
                                         </div>
                                         @endif
                                         @if (Auth::user()->role === 'senior')
                                         <div class="topnav">
-                                            <a class="nav-item text-black pl-2 pt-1 ml-4" role="button" href="{{ route('new-request') }}">Request for help</a></br>
-                                            <a class="nav-item text-black pt-3 pl-2 ml-3" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
-                                            <a class="nav-item text-black pt-3 pl-2 pb-4 ml-3" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
+                                            <a class="nav-item text-black pt-1 ml-2" role="button" href="{{ route('new-request') }}">Request for help</a></br>
+                                            <a class="nav-item text-black pt-3 ml-2" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
+                                            <a class="nav-item text-black pt-3 pb-4 ml-2" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
                                         @endif
                                         @endguest
 
