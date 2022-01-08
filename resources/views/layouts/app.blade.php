@@ -54,11 +54,11 @@
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     <strong>{{ config('app.name') }}</strong>
                 </a>
-                <button class="navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class=" float-right navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    Menu <i class="bi bi-menu-up"></i>
                 </button>
 
-                <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
                     {{-- Middle of Navbar --}}
@@ -68,7 +68,7 @@
                         @else
                             @if (Auth::user()->role === 'senior')
                             <div class="dropdown">
-                            <button type="button" class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" data-toggle="dropdown" data-target="#droppp">
+                            <button type="button" class="float-right navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" data-toggle="dropdown" data-target="#droppp">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                                 @if ( is_countable(session('cart')) && count(session('cart')) > 0)
                                     <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
@@ -111,7 +111,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto navbar-light float-right">
+                    <ul class="navbar-nav ml-auto navbar-light">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -127,7 +127,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <button class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                <button class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                                 <a>
                                     {{ Auth::user()->name }} <i class="bi bi-menu-up"></i>
                                 </a></button>
@@ -144,7 +144,7 @@
                                         @endif
                                         @if (Auth::user()->role === 'senior')
                                         <div class="topnav">
-                                            <a class="nav-item text-black pl-2 pt-1 ml-3" role="button" href="{{ route('new-request') }}">Request for help</a></br>
+                                            <a class="nav-item text-black pl-2 pt-1 ml-4" role="button" href="{{ route('new-request') }}">Request for help</a></br>
                                             <a class="nav-item text-black pt-3 pl-2 ml-3" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
                                             <a class="nav-item text-black pt-3 pl-2 pb-4 ml-3" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
                                         @endif
