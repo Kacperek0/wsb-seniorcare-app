@@ -41,7 +41,7 @@ All Database tables are created and managed from code.
 
 ## Contributors
 
-- [Mikołaj Kostrzewa](https://github.com/kostek-os) - Frontend + Backend
+- [Mikołaj Kostrzewa](https://github.com/kostek-os) - Frontend
 - [Paweł Skorzybót](https://github.com/PawelSkorzybot) - Frontend
 - [Kacper Szczepanek](https://github.com/Kacperek0) - Backend + Infra
 
