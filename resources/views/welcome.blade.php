@@ -120,7 +120,7 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h3 class="text-uppercase mb-4"><i class="bi bi-geo" style="font-size: 2rem; color: darkgray;"></i>  Location</h3>
                         <p class="lead mb-0">
-                            ul. Powstańców Wielkopolskich 5
+                            ul. WSB Test 1
                             <br />
                             61-895 Poznań
                         </p>
