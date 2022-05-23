@@ -16,7 +16,7 @@ class CreateCheckoutsTable extends Migration
         Schema::create('checkouts', function (Blueprint $table) {
             $table->increments('id');
             $table->text('order');
-            $table->int('user_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
