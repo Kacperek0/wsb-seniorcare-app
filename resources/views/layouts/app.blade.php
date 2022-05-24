@@ -54,7 +54,7 @@
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     <strong>{{ config('app.name') }}</strong>
                 </a>
-                <button class=" float-right navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="float-right navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     Menu <i class="bi bi-menu-up"></i>
                 </button>
 
