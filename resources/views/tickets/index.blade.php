@@ -8,7 +8,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-ticket"> Help Requests</i>
+                    <i class="bi bi-ticket"> Help Requests</i>
                 </div>
                 <div class="panel-body">
                     @if (session('message'))

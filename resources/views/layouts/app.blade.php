@@ -54,7 +54,7 @@
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     <strong>{{ config('app.name') }}</strong>
                 </a>
-                <button class="float-right navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="ml-auto navbar-toggler text-uppercase font-weight-bold text-white rounded btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     Menu <i class="bi bi-menu-up"></i>
                 </button>
 
@@ -62,13 +62,13 @@
                     <!-- Left Side Of Navbar -->
 
                     {{-- Middle of Navbar --}}
-                    <ul class="navbar-nav ml-auto navbar-light">
+                    <ul class="navbar-nav navbar-light ml-auto">
                         @guest
 
                         @else
                             @if (Auth::user()->role === 'senior')
-                            <div class="dropdown">
-                            <button type="button" class="float-right navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-3" data-toggle="dropdown" data-target="#droppp">
+                            <div class="dropdown ml-auto">
+                            <button type="button" class="navbar dropdown-toggler text-uppercase font-weight-bold text-white bg-info rounded ml-auto" data-toggle="dropdown" data-target="#droppp">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart
                                 @if ( is_countable(session('cart')) && count(session('cart')) > 0)
                                     <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
@@ -111,7 +111,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto navbar-light">
+                    <ul class="navbar-nav navbar-light">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -134,23 +134,19 @@
 
                                 <div class="collapse dropdown-menu" aria-labelledby="navbarDropdown" id="navbarResponsive">
 
-                                    <ul class="navbar-nav navbar-light">
                                         @guest
                                         @else
                                         @if (Auth::user()->role === 'helper')
-                                        <div class="topnav">
-                                            <a class="nav-item text-black pt-1 pb-4 ml-3" role="button" href="{{ route('help-requests') }}">Help requests</a>
-                                        </div>
+                                            <a class="dropdown-item text-black" role="button" href="{{ route('help-requests') }}">Help requests</a>
                                         @endif
                                         @if (Auth::user()->role === 'senior')
-                                        <div class="topnav">
-                                            <a class="nav-item text-black pt-1 ml-2" role="button" href="{{ route('new-request') }}">Request for help</a></br>
-                                            <a class="nav-item text-black pt-3 ml-2" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
-                                            <a class="nav-item text-black pt-3 pb-4 ml-2" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
+                                            <a class="dropdown-item text-black" role="button" href="{{ route('new-request') }}">Request for help</a></br>
+                                            <a class="dropdown-item text-black" role="button" href="{{ route('shopping') }}">Shopping request</a></br>
+                                            <a class="dropdown-item text-black" role="button" href="{{ route('my-tickets') }}">My requests</a></br>
                                         @endif
                                         @endguest
 
-                                    </ul>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -209,7 +205,7 @@
             </div>
         </footer>
     <div class="copyright py-4 text-center text-dark">
-            <div class="container"><small>Copyright &copy; SeniorCare 2021</small></div>
+            <div class="container"><small>Copyright &copy; SeniorCare 2022</small></div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
