@@ -93,7 +93,7 @@
                 <h1 class="page-section-heading text-center text-dark pt-5 pb-2">About Seniorcare</h1>
                 <!-- About Section Content-->
                 <div class="row mt-4 pb-5">
-                    <div class="col-lg-12 ms-auto text-justify mt-4 pb-5"><p><em><h2>
+                    <div class="col-lg-12 ms-auto text-center mt-4 pb-5"><p><em><h2>
                         Seniorcare is a platform which is deliverying help among local society.
                         Using our platform you can help your elder neighbors with their daily housework like shopping or others.
                         <br><br>
