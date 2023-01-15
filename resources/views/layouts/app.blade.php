@@ -179,7 +179,7 @@
                     <div class="col-lg-4 mb-3 mb-lg-0">
                         <h4 class="text-uppercase mb-3"><i class="bi bi-geo" style="font-size: 2rem; color: darkgray;"></i>  Location</h4>
                         <p class="lead mb-0">
-                            ul. Powstańców Wielkopolskich 5
+                            ul. Inna Ulica 7
                             <br />
                             61-895 Poznań
                         </p>
